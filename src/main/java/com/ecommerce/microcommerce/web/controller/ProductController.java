@@ -16,6 +16,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,10 +29,8 @@ public class ProductController {
     private ProductDao productDao;
 
 
-    //Récupérer la liste des produits
 
     @RequestMapping(value = "/Produits", method = RequestMethod.GET)
-
     public MappingJacksonValue listeProduits() {
 
         Iterable<Product> produits = productDao.findAll();
@@ -51,7 +50,6 @@ public class ProductController {
     //Récupérer un produit par son Id
     @ApiOperation(value = "Récupère un produit grâce à son ID à condition que celui-ci soit en stock!")
     @GetMapping(value = "/Produits/{id}")
-
     public Product afficherUnProduit(@PathVariable int id) {
 
         Product produit = productDao.findById(id);
@@ -66,7 +64,6 @@ public class ProductController {
 
     //ajouter un produit
     @PostMapping(value = "/Produits")
-
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
 
         Product productAdded =  productDao.save(product);
@@ -103,6 +100,18 @@ public class ProductController {
         return productDao.chercherUnProduitCher(400);
     }
 
-
+    @GetMapping(value = "/AdminProduits")
+    public List<String> calculerMargeProduit(){
+        List<String> productWithBenefit= new ArrayList<>();
+        
+        //récupération des données en base comme demandé
+        List<Product> products =  productDao.findAll();
+        for (Product product :  products){
+            //pas élégant certe mais efficace
+            String produit = product.toString() +": " + String.valueOf(product.getPrix()- product.getPrixAchat());
+            productWithBenefit.add(produit);
+        }
+    return productWithBenefit;
+    }
 
 }
