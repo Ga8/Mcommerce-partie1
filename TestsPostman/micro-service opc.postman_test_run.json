@@ -1,0 +1,242 @@
+{
+	"id": "685b81e8-cc64-4152-b24f-8c1376748eb8",
+	"name": "micro-service opc",
+	"allTests": [],
+	"timestamp": "2019-11-12T22:48:22.068Z",
+	"collection_id": "a94571f7-c8dd-4dc2-a9c3-8bcf8d4cdd53",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "a94571f7-c8dd-4dc2-a9c3-8bcf8d4cdd53",
+		"name": "micro-service opc",
+		"description": "",
+		"auth": null,
+		"events": null,
+		"variables": [],
+		"order": [
+			"1f5d484c-001b-47f2-81a0-f12437b5a5ac",
+			"a951d6f9-346d-43b9-9c66-55212ccb0b25",
+			"9733ba6a-7ae0-4f13-9cd5-9d7621472b92",
+			"33fa7d5e-bc48-41f2-a4df-d2cb8603a128",
+			"e409ef49-cde4-44bd-9070-f641c6626101"
+		],
+		"folders_order": [],
+		"owner": "0",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": null,
+	"results": [
+		{
+			"name": "PostOneMoreProduct",
+			"id": "1f5d484c-001b-47f2-81a0-f12437b5a5ac",
+			"url": "http://localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"24"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "24",
+			"totalRequestTime": "24",
+			"iterationResults": {}
+		},
+		{
+			"name": "GetAllProduct",
+			"id": "a951d6f9-346d-43b9-9c66-55212ccb0b25",
+			"url": "http://localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"6"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "6",
+			"totalRequestTime": "6",
+			"iterationResults": {}
+		},
+		{
+			"name": "AdminProduits",
+			"id": "9733ba6a-7ae0-4f13-9cd5-9d7621472b92",
+			"url": "http://localhost:9090/AdminProduits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		},
+		{
+			"name": "GetProductByName",
+			"id": "33fa7d5e-bc48-41f2-a4df-d2cb8603a128",
+			"url": "http://localhost:9090/GetProductByName",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		},
+		{
+			"name": "ErreurTest",
+			"id": "e409ef49-cde4-44bd-9070-f641c6626101",
+			"url": "http://localhost:9090/ErreurTest",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 0,
+	"totalFail": 0,
+	"totalTime": 45,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "PostOneMoreProduct",
+			"id": "1f5d484c-001b-47f2-81a0-f12437b5a5ac",
+			"url": "http://localhost:9090/Produits",
+			"time": "2019-11-12T22:48:22.068Z",
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "GetAllProduct",
+			"id": "a951d6f9-346d-43b9-9c66-55212ccb0b25",
+			"url": "http://localhost:9090/Produits",
+			"time": "2019-11-12T22:48:22.068Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "AdminProduits",
+			"id": "9733ba6a-7ae0-4f13-9cd5-9d7621472b92",
+			"url": "http://localhost:9090/AdminProduits",
+			"time": "2019-11-12T22:48:22.068Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "GetProductByName",
+			"id": "33fa7d5e-bc48-41f2-a4df-d2cb8603a128",
+			"url": "http://localhost:9090/GetProductByName",
+			"time": "2019-11-12T22:48:22.068Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "ErreurTest",
+			"id": "e409ef49-cde4-44bd-9070-f641c6626101",
+			"url": "http://localhost:9090/ErreurTest",
+			"time": "2019-11-12T22:48:22.068Z",
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error",
+				"detail": {
+					"name": "Internal Server Error",
+					"detail": "A generic error message, given when no more specific message is suitable."
+				}
+			},
+			"testPassFailCounts": {}
+		}
+	],
+	"synced": false
+}
