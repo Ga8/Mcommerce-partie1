@@ -101,6 +101,7 @@ public class ProductController {
         return productDao.chercherUnProduitCher(400);
     }
 
+    @ApiOperation(value = "Retourne tous les produits de la base et calcule la marge associé au produit.")
     @GetMapping(value = "/AdminProduits")
     public List<String> calculerMargeProduit(){
         List<String> productWithBenefit= new ArrayList<>();
@@ -117,10 +118,30 @@ public class ProductController {
     return productWithBenefit;
     }
 
+    @ApiOperation(value = "Retourne tous les produits de la base classé par ordre alphabétique.")
     @GetMapping(value = "/GetProductByName")
     public List<Product> trierProduitsParOrdreAlphabetique(){
         List<Product> productByName = productDao.findByOrderByNomAsc();
 
+        checkPrixNull(productByName);
+
+        return productByName;
+    }
+
+    /**
+     * create error to test
+     * @return probably ProduitGratuitException :)
+     */
+    @ApiOperation(value = "Crée une erreur afin de vérifier qu'on ne peut pas renvoyer un produit avec un prix égal à 0!")
+    @GetMapping(value = "/ErreurTest")
+    public List<Product> créerUneErreur(){
+        List<Product> productByName = productDao.findByOrderByNomAsc();
+
+        //create prix = 0
+        if (!productByName.isEmpty()) {
+            productByName.get(0).setPrix(0);
+        }
+        //control and throw exception
         checkPrixNull(productByName);
 
         return productByName;
