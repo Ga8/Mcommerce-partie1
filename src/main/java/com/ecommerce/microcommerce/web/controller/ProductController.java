@@ -2,6 +2,7 @@ package com.ecommerce.microcommerce.web.controller;
 
 import com.ecommerce.microcommerce.dao.ProductDao;
 import com.ecommerce.microcommerce.model.Product;
+import com.ecommerce.microcommerce.web.exceptions.ProduitGratuitException;
 import com.ecommerce.microcommerce.web.exceptions.ProduitIntrouvableException;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
@@ -103,9 +104,11 @@ public class ProductController {
     @GetMapping(value = "/AdminProduits")
     public List<String> calculerMargeProduit(){
         List<String> productWithBenefit= new ArrayList<>();
-        
+
         //récupération des données en base comme demandé
         List<Product> products =  productDao.findAll();
+
+        checkPrixNull(products);
         for (Product product :  products){
             //pas élégant certe mais efficace
             String produit = product.toString() +": " + String.valueOf(product.getPrix()- product.getPrixAchat());
@@ -113,5 +116,28 @@ public class ProductController {
         }
     return productWithBenefit;
     }
+
+    @GetMapping(value = "/GetProductByName")
+    public List<Product> trierProduitsParOrdreAlphabetique(){
+        List<Product> productByName = productDao.findByOrderByNomAsc();
+
+        checkPrixNull(productByName);
+
+        return productByName;
+    }
+
+    /**
+     * check if product got prix == 0
+     *
+     * @param products products list
+     */
+    private void checkPrixNull(List<Product> products) {
+        for(Product product : products){
+            if ( product.getPrix() ==  0 ){
+            throw new ProduitGratuitException("Le produit : " + product.getNom() + " possède un prix égal à 0.");
+            }
+        }
+    }
+
 
 }
